@@ -19,10 +19,10 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Installer Gradle 8.11.1
+      - name: Installer Gradle 8.13
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "8.11.1"
+          gradle-version: "8.13"
 
       - name: Décompresser le projet
         run: |
