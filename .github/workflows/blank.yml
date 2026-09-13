@@ -28,12 +28,18 @@ jobs:
         run: |
           unzip -o Tempsderepos.zip
 
+      - name: Vérifier le projet
+        run: |
+          pwd
+          ls -la
+          test -f settings.gradle.kts
+          test -d app
+
       - name: Construire l'APK
-        working-directory: Tempsderepos
         run: gradle assembleDebug --stacktrace
 
       - name: Publier l'APK
         uses: actions/upload-artifact@v4
         with:
           name: Tempsderepos-APK
-          path: Tempsderepos/app/build/outputs/apk/debug/app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
